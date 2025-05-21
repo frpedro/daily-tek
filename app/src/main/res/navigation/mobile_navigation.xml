@@ -20,6 +20,5 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="br.dev.henry.dailytek.ui.notifications.NotificationsFragment"
-        android:label="@string/title_more"
         tools:layout="@layout/fragment_more" />
 </navigation>
