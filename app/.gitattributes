@@ -1,0 +1,12 @@
+# Força o Git a tratar arquivos de texto e normalizar EOL para LF
+* text=auto
+
+# Força EOL LF em arquivos XML e código fonte
+*.xml text eol=lf
+*.java text eol=lf
+*.kt text eol=lf
+*.gradle text eol=lf
+
+# Mantém CRLF para arquivos binários (imagens etc)
+*.png binary
+*.jpg binary
