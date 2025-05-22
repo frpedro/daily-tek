@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomButtonShape" parent="ShapeAppearance.Material3.Corner.None">
+        <item name="cornerSize">10sp</item>
+    </style>
+</resources>
