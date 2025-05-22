@@ -37,8 +37,8 @@ class AdvancedChartFragment : Fragment() {
         val root: View = binding.root
 
         // Chama as funções para configurar os gráficos
-        setupLineChart(requireContext(), binding.lineChart2)
-        setupBarChart(requireContext(), binding.barChart)
+        setupLineChart(requireContext(), binding.lineChart1)
+        setupBarChart(requireContext(), binding.barChart2)
 
         return root
     }

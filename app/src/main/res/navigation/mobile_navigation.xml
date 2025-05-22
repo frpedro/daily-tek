@@ -21,4 +21,11 @@
         android:id="@+id/navigation_notifications"
         android:name="br.dev.henry.dailytek.ui.notifications.NotificationsFragment"
         tools:layout="@layout/fragment_more" />
+
+    <fragment
+        android:id="@+id/navigation_advanced_chart"
+        android:name="br.dev.henry.dailytek.ui.advancedchart.AdvancedChartFragment"
+        android:label="Gráfico Avançado"
+        tools:layout="@layout/fragment_advanced_chart" />
+
 </navigation>

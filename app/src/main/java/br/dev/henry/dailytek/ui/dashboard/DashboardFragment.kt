@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import br.dev.henry.dailytek.R
 import br.dev.henry.dailytek.databinding.FragmentDashboardBinding
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.Entry
@@ -86,6 +88,13 @@ class DashboardFragment : Fragment() {
         binding.lineChart.setPinchZoom(true)
         binding.lineChart.animateX(800)
         binding.lineChart.invalidate()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.lineChart.setOnClickListener {
+            findNavController().navigate(R.id.navigation_advanced_chart)
+        }
     }
 
     override fun onDestroyView() {
