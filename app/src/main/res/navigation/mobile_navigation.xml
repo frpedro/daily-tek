@@ -27,5 +27,9 @@
         android:name="br.dev.henry.dailytek.ui.advancedchart.AdvancedChartFragment"
         android:label="Gráfico Avançado"
         tools:layout="@layout/fragment_advanced_chart" />
+    <fragment
+        android:id="@+id/navigation_forms"
+        android:name="br.dev.henry.dailytek.ui.forms.Forms"
+        tools:layout="@layout/fragment_forms" />
 
 </navigation>
