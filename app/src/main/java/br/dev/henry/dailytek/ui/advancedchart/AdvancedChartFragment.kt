@@ -18,7 +18,7 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 
-// CLASSES SOBRE GRAFICOS
+// tela responsável por exibir gráficos avançados
 class AdvancedChartFragment : Fragment() {
 
     private var _binding: FragmentAdvancedChartBinding? = null
@@ -31,9 +31,11 @@ class AdvancedChartFragment : Fragment() {
     ): View {
         val chartViewModel = ViewModelProvider(this).get(AdvancedChartViewModel::class.java)
 
+        // infla o layout usando ViewBinding
         _binding = FragmentAdvancedChartBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        // configura os gráficos
         setupLineChart(requireContext(), binding.lineChart1)
         setupBarChart(requireContext(), binding.barChart2)
 
@@ -42,11 +44,12 @@ class AdvancedChartFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        // evita memory leaks
         _binding = null
     }
 
+    // configura o gráfico de linha com dados e estilo visual
     private fun setupLineChart(context: Context, lineChart: LineChart) {
-        // Dados em tendência de queda
         val entries = arrayListOf(
             Entry(0f, 5f),
             Entry(1f, 8f),
@@ -67,15 +70,15 @@ class AdvancedChartFragment : Fragment() {
             form = Legend.LegendForm.NONE
         }
 
-        lineChart.axisLeft.apply {
-            isEnabled = false
-        }
+        // remove eixo Y esquerdo e direito
+        lineChart.axisLeft.isEnabled = false
+        lineChart.axisRight.isEnabled = false
 
+        // aplica dados ao gráfico
         lineChart.data = LineData(dataSet)
 
+        // rótulos do eixo X
         val xLabels = listOf("01 mar", "02 mar", "03 mar", "04 mar", "05 mar", "06 mar")
-
-        // Estilo do eixo X
         lineChart.xAxis.apply {
             valueFormatter = IndexAxisValueFormatter(xLabels)
             position = XAxis.XAxisPosition.BOTTOM
@@ -87,21 +90,9 @@ class AdvancedChartFragment : Fragment() {
             granularity = 1f
         }
 
-        // Eixo Y esquerdo
-        lineChart.axisLeft.apply {
-            setDrawGridLines(false)
-            setDrawAxisLine(false)
-            textColor = Color.BLACK
-            textSize = 12f
-        }
-
-        // Desativa eixo Y direito
-        lineChart.axisRight.isEnabled = false
-
+        // Estilização adicional
         lineChart.description.isEnabled = false
         lineChart.legend.isEnabled = true
-
-        // Interações e animação
         lineChart.setTouchEnabled(true)
         lineChart.setPinchZoom(true)
         lineChart.setDrawGridBackground(false)
@@ -110,7 +101,7 @@ class AdvancedChartFragment : Fragment() {
         lineChart.invalidate()
     }
 
-
+    // configura o gráfico de barras com dados e estilo visual
     private fun setupBarChart(context: Context, barChart: BarChart) {
         val entries = arrayListOf(
             BarEntry(0f, 30f),
@@ -126,8 +117,10 @@ class AdvancedChartFragment : Fragment() {
             setDrawValues(false)
         }
 
+        // aplica dados ao gráfico
         barChart.data = BarData(dataSet)
 
+        // rótulos do eixo X
         val labels = listOf("Dez", "Jan", "Fev", "Mar", "Abr", "Mai")
         barChart.xAxis.apply {
             valueFormatter = IndexAxisValueFormatter(labels)
@@ -140,25 +133,21 @@ class AdvancedChartFragment : Fragment() {
             granularity = 1f
         }
 
-        // Desativa eixos Y (esquerdo e direito)
+        // remove eixos Y
         barChart.axisLeft.isEnabled = false
         barChart.axisRight.isEnabled = false
 
+        // estilização adicional
         barChart.setDrawGridBackground(false)
         barChart.setDrawBorders(false)
         barChart.description.isEnabled = false
-        barChart.legend.isEnabled = false // Esconde legenda
-
+        barChart.legend.isEnabled = false
         barChart.animateY(800)
         barChart.invalidate()
 
-        // Voltar para dashboard
+        // botão de voltar
         binding.imageButton4.setOnClickListener {
             findNavController().navigateUp()
         }
-
     }
-
-
-
 }

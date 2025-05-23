@@ -24,6 +24,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
@@ -35,6 +36,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun configurarGrafico() {
+        // dados de exemplo para o grafico
         val entries = listOf(
             Entry(1f, 3f),
             Entry(2f, 2f),
@@ -49,48 +51,54 @@ class DashboardFragment : Fragment() {
             Entry(11f, 5f)
         )
 
-        val dataSet = LineDataSet(entries, "Humor")
-        dataSet.color = Color.parseColor("#4F7396")          // Cor da linha
-        dataSet.setCircleColor(Color.parseColor("#4F7396")) // Cor dos círculos
-        dataSet.lineWidth = 3f
-        dataSet.circleRadius = 5f
-        dataSet.valueTextSize = 12f
-        dataSet.setDrawValues(false)
-        dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
-        dataSet.setDrawCircles(false)
+        val dataSet = LineDataSet(entries, "Humor").apply {
+            color = Color.parseColor("#4F7396")                // cor da linha
+            setCircleColor(Color.parseColor("#4F7396"))       // cor dos pontos
+            lineWidth = 3f
+            circleRadius = 5f
+            valueTextSize = 12f
+            setDrawValues(false)                               // oculta os valores sobre os pontos
+            mode = LineDataSet.Mode.CUBIC_BEZIER               // curva
+            setDrawCircles(false)                              // oculta o circulo
+        }
 
-        val lineData = LineData(dataSet)
-        binding.lineChart.data = lineData
+        binding.lineChart.data = LineData(dataSet)
 
-        // Limpar fundo e grade
-        binding.lineChart.setDrawGridBackground(false)      // Remove fundo quadriculado
-        binding.lineChart.setDrawBorders(false)             // Remove bordas
+        // configurações visuais do gráfico
+        binding.lineChart.apply {
+            setDrawGridBackground(false)                       // remove fundo quadriculado
+            setDrawBorders(false)                              // remove bordas
+            description.isEnabled = false                      // remove descrição
 
-        // Configura eixos para não mostrar linhas e marcas
-        val xAxis = binding.lineChart.xAxis
-        xAxis.setDrawGridLines(false)      // Remove linhas verticais (grade X)
-        xAxis.setDrawLabels(false)         // Remove valores (labels) no eixo X
-        xAxis.setDrawAxisLine(false)       // Remove linha do eixo X
+            // eixo X
+            xAxis.apply {
+                setDrawGridLines(false)
+                setDrawLabels(false)
+                setDrawAxisLine(false)
+            }
 
-        val leftAxis = binding.lineChart.axisLeft
-        leftAxis.setDrawGridLines(false)   // Remove linhas horizontais (grade Y esquerda)
-        leftAxis.setDrawLabels(false)      // Remove valores no eixo Y esquerdo
-        leftAxis.setDrawAxisLine(false)    // Remove linha do eixo Y esquerdo
+            // eixo Y esquerdo
+            axisLeft.apply {
+                setDrawGridLines(false)
+                setDrawLabels(false)
+                setDrawAxisLine(false)
+            }
 
-        val rightAxis = binding.lineChart.axisRight
-        rightAxis.isEnabled = false         // Desativa eixo Y direito completamente
+            // eixo Y direito desativado
+            axisRight.isEnabled = false
 
-        binding.lineChart.description.isEnabled = false
-        binding.lineChart.legend.isEnabled = true
-        dataSet.form = Legend.LegendForm.CIRCLE
-        binding.lineChart.setTouchEnabled(true)
-        binding.lineChart.setPinchZoom(true)
-        binding.lineChart.animateX(800)
-        binding.lineChart.invalidate()
+            legend.isEnabled = true                            // mostra legenda
+            dataSet.form = Legend.LegendForm.CIRCLE            // forma da legenda
+            setTouchEnabled(true)                              // permite interação
+            setPinchZoom(true)                                 // zoom com dois dedos
+            animateX(800)                          // animação de entrada
+            invalidate() // força redesenho para atualizar dados
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // navega para outro gráfico ao clicar no gráfico atual
         binding.lineChart.setOnClickListener {
             findNavController().navigate(R.id.navigation_advanced_chart)
         }
@@ -98,8 +106,6 @@ class DashboardFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        _binding = null // evita memory leak
     }
-
-
 }
