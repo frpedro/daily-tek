@@ -1,6 +1,6 @@
 package br.dev.henry.dailytek.ui.advancedchart
-
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,19 +8,17 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import br.dev.henry.dailytek.R
 import br.dev.henry.dailytek.databinding.FragmentAdvancedChartBinding
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 
+// CLASSES SOBRE GRAFICOS
 class AdvancedChartFragment : Fragment() {
 
     private var _binding: FragmentAdvancedChartBinding? = null
@@ -36,7 +34,6 @@ class AdvancedChartFragment : Fragment() {
         _binding = FragmentAdvancedChartBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Chama as funções para configurar os gráficos
         setupLineChart(requireContext(), binding.lineChart1)
         setupBarChart(requireContext(), binding.barChart2)
 
@@ -49,34 +46,70 @@ class AdvancedChartFragment : Fragment() {
     }
 
     private fun setupLineChart(context: Context, lineChart: LineChart) {
+        // Dados em tendência de queda
         val entries = arrayListOf(
-            Entry(0f, 20f),
-            Entry(1f, 24f),
-            Entry(2f, 2f),
-            Entry(3f, 10f),
-            Entry(4f, 28f),
-            Entry(5f, 26f)
+            Entry(0f, 5f),
+            Entry(1f, 8f),
+            Entry(2f, 7f),
+            Entry(3f, 5f),
+            Entry(4f, 1f),
+            Entry(5f, 2f)
         )
-        val dataSet = LineDataSet(entries, "Histórico").apply {
-            color = ContextCompat.getColor(context, R.color.purple_500)
-            valueTextColor = ContextCompat.getColor(context, R.color.black)
-            lineWidth = 2f
+
+        val dataSet = LineDataSet(entries, "").apply {
+            color = ContextCompat.getColor(context, R.color.chart_blue)
+            lineWidth = 3f
             circleRadius = 5f
-            setDrawValues(true)
+            valueTextSize = 12f
+            setDrawValues(false)
+            mode = LineDataSet.Mode.CUBIC_BEZIER
+            setDrawCircles(false)
+            form = Legend.LegendForm.NONE
+        }
+
+        lineChart.axisLeft.apply {
+            isEnabled = false
         }
 
         lineChart.data = LineData(dataSet)
 
-        val labels = listOf("Seg", "Ter", "Qua", "Qui", "Sex", "Sáb")
+        val xLabels = listOf("01 mar", "02 mar", "03 mar", "04 mar", "05 mar", "06 mar")
+
+        // Estilo do eixo X
         lineChart.xAxis.apply {
-            valueFormatter = IndexAxisValueFormatter(labels)
+            valueFormatter = IndexAxisValueFormatter(xLabels)
             position = XAxis.XAxisPosition.BOTTOM
+            labelRotationAngle = 0f
             setDrawGridLines(false)
+            setDrawAxisLine(false)
+            textColor = Color.BLACK
+            textSize = 12f
+            granularity = 1f
         }
+
+        // Eixo Y esquerdo
+        lineChart.axisLeft.apply {
+            setDrawGridLines(false)
+            setDrawAxisLine(false)
+            textColor = Color.BLACK
+            textSize = 12f
+        }
+
+        // Desativa eixo Y direito
         lineChart.axisRight.isEnabled = false
+
         lineChart.description.isEnabled = false
+        lineChart.legend.isEnabled = true
+
+        // Interações e animação
+        lineChart.setTouchEnabled(true)
+        lineChart.setPinchZoom(true)
+        lineChart.setDrawGridBackground(false)
+        lineChart.setDrawBorders(false)
+        lineChart.animateX(800)
         lineChart.invalidate()
     }
+
 
     private fun setupBarChart(context: Context, barChart: BarChart) {
         val entries = arrayListOf(
@@ -85,23 +118,47 @@ class AdvancedChartFragment : Fragment() {
             BarEntry(2f, 60f),
             BarEntry(3f, 50f),
             BarEntry(4f, 70f),
-            BarEntry(5f, 60f)
+            BarEntry(5f, 40f)
         )
-        val dataSet = BarDataSet(entries, "Comparativo").apply {
-            color = ContextCompat.getColor(context, R.color.teal_700)
-            valueTextColor = ContextCompat.getColor(context, R.color.black)
+
+        val dataSet = BarDataSet(entries, "").apply {
+            color = ContextCompat.getColor(context, R.color.chart_blue)
+            setDrawValues(false)
         }
 
         barChart.data = BarData(dataSet)
 
-        val labels = listOf("Jan", "Feb", "Mar", "Apr", "May", "Jun")
+        val labels = listOf("Dez", "Jan", "Fev", "Mar", "Abr", "Mai")
         barChart.xAxis.apply {
             valueFormatter = IndexAxisValueFormatter(labels)
             position = XAxis.XAxisPosition.BOTTOM
             setDrawGridLines(false)
+            setDrawAxisLine(false)
+            textColor = Color.BLACK
+            textSize = 12f
+            labelRotationAngle = 0f
+            granularity = 1f
         }
+
+        // Desativa eixos Y (esquerdo e direito)
+        barChart.axisLeft.isEnabled = false
         barChart.axisRight.isEnabled = false
+
+        barChart.setDrawGridBackground(false)
+        barChart.setDrawBorders(false)
         barChart.description.isEnabled = false
+        barChart.legend.isEnabled = false // Esconde legenda
+
+        barChart.animateY(800)
         barChart.invalidate()
+
+        // Voltar para dashboard
+        binding.imageButton4.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
     }
+
+
+
 }

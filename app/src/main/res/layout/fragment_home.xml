@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonnav"
         android:layout_width="168dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -109,9 +109,9 @@
         android:textColor="#000000"
         android:textSize="15dp"
         app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonnav"
+        app:layout_constraintStart_toEndOf="@+id/buttonnav"
+        app:layout_constraintTop_toTopOf="@+id/buttonnav"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView

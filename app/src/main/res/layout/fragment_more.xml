@@ -26,7 +26,7 @@
         android:text="Novidades sobre produtos"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/textView17"
-        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
         tools:ignore="MissingConstraints" />
@@ -63,7 +63,7 @@
         android:text=" Dicas e práticas recomendadas"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -88,7 +88,7 @@
         android:text="Últimas mudanças"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/textView19"
-        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         tools:ignore="MissingConstraints" />
@@ -133,7 +133,7 @@
         android:text="Procure perguntas"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/textView22"
-        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintHorizontal_bias="0.317"
         app:layout_constraintStart_toStartOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -187,6 +187,7 @@
         android:text="Novos recursos"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/textView24"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="@+id/textView24"
         app:layout_constraintTop_toBottomOf="@+id/textView24"
         tools:ignore="MissingConstraints" />
@@ -241,6 +242,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
+        android:backgroundTint="#C0C0C0"
         android:src="@drawable/config"
         app:layout_constraintBottom_toBottomOf="@+id/textTitulo"
         app:layout_constraintStart_toEndOf="@+id/textTitulo"

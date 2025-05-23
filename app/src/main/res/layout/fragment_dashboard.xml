@@ -11,23 +11,20 @@
 
     <TextView
         android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="332dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
         android:fontFamily="@font/bold_inter"
         android:text="Estado Emocional"
         android:textAlignment="center"
         android:textColor="#121111"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_dashboard2"
@@ -87,13 +84,6 @@
         app:layout_constraintGuide_end="-1dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="58dp" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -129,7 +119,6 @@
         android:layout_width="98dp"
         android:layout_height="44dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
         android:backgroundTint="#E8EDF2"
         android:fontFamily="@font/bold_inter"
         android:text="Hoje"
@@ -138,9 +127,7 @@
         android:textSize="12sp"
         app:cornerRadius="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
     <Button
         android:id="@+id/button11"
