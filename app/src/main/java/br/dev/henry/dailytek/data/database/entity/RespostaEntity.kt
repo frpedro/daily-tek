@@ -11,4 +11,5 @@ data class RespostaEntity(
     val resposta: String,
     val categoria: String,
     val usuarioId: String = "default_user"
+
 )

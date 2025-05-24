@@ -27,9 +27,30 @@
         android:name="br.dev.henry.dailytek.ui.advancedchart.AdvancedChartFragment"
         android:label="Gráfico Avançado"
         tools:layout="@layout/fragment_advanced_chart" />
+
     <fragment
         android:id="@+id/navigation_forms"
-        android:name="br.dev.henry.dailytek.ui.forms.Forms"
+        android:name="br.dev.henry.dailytek.ui.forms.carga_de_trabalho.forms1.Forms1Fragment1"
         tools:layout="@layout/fragment_forms" />
+
+    <fragment
+        android:id="@+id/navigation_forms2"
+        android:name="br.dev.henry.dailytek.ui.forms.carga_de_trabalho.forms2.FormsFragment2"
+        tools:layout="@layout/fragment_forms2" />
+
+    <fragment
+        android:id="@+id/navigation_forms3"
+        android:name="br.dev.henry.dailytek.ui.forms.carga_de_trabalho.forms3.FormsFragment3"
+        tools:layout="@layout/fragment_forms3" />
+
+    <fragment
+        android:id="@+id/navigation_forms4"
+        android:name="br.dev.henry.dailytek.ui.forms.clima_emocional.forms4.FormsFragment4"
+        tools:layout="@layout/fragment_forms4" />
+
+    <fragment
+        android:id="@+id/navigation_select_forms"
+        android:name="br.dev.henry.dailytek.ui.forms.select_forms.SelectFormsFragment"
+        tools:layout="@layout/fragment_select_forms" />
 
 </navigation>

@@ -295,7 +295,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard5"
         app:shapeAppearanceOverlay="@style/CustomButtonShape"
-        app:strokeColor="#1A80E5"
+        app:strokeColor="#7E000000"
         app:strokeWidth="3px" />
 
     <Button
@@ -317,7 +317,7 @@
         app:layout_constraintStart_toEndOf="@+id/button12"
         app:layout_constraintTop_toTopOf="@+id/button12"
         app:shapeAppearanceOverlay="@style/CustomButtonShape"
-        app:strokeColor="#1A80E5"
+        app:strokeColor="#7E000000"
         app:strokeWidth="3px" />
 
     <Button
@@ -373,7 +373,7 @@
         android:backgroundTint="#00FFFFFF"
         android:fontFamily="@font/bold_inter"
         android:shadowColor="#FFFFFF"
-        android:text="👎"
+        android:text="👍"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#000000"

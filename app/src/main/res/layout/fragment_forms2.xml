@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.forms.Forms">
+    tools:context=".ui.forms.carga_de_trabalho.forms1.Forms1Fragment1">
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="321dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="313dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/bold_inter"
         android:text="Sua carga de trabalho afeta sua qualidade de vida?"
-        android:textSize="20sp"
+        android:textColor="#070707"
+        android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -23,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/bold_inter"
         android:text="Dailytek"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline17"
@@ -34,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline17"
@@ -48,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.13" />
 
     <RadioGroup
         android:id="@+id/radioGroup3"
@@ -63,56 +67,69 @@
             android:id="@+id/radioButton5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
             android:text="Não"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:fontFamily="@font/inter"
             android:text="Raramente"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:fontFamily="@font/inter"
             android:text="Às vezes"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:fontFamily="@font/inter"
             android:text="Frequentemente"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:fontFamily="@font/inter"
             android:text="Sempre"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
     </RadioGroup>
 
     <Button
         android:id="@+id/btnNext2"
-        android:layout_width="219dp"
-        android:layout_height="56dp"
+        android:layout_width="244dp"
+        android:layout_height="57dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="#007AFF"
+        android:fontFamily="@font/bold_inter"
         android:text="Enviar"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline17"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />

@@ -1,48 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.forms3.Forms3">
+    tools:context=".ui.forms.carga_de_trabalho.forms3.FormsFragment3">
 
-
-    <Button
-        android:id="@+id/btnNext3"
-        android:layout_width="219dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#007AFF"
-        android:text="Enviar"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline20"
-        app:layout_constraintStart_toStartOf="@+id/guideline19"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="321dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/bold_inter"
-        android:text="Você trabalha além do seu horário regular?"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline20"
-        app:layout_constraintStart_toStartOf="@+id/guideline19"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Dailytek"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline20"
-        app:layout_constraintStart_toStartOf="@+id/guideline19"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- Guias laterais e superior -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline19"
         android:layout_width="wrap_content"
@@ -62,58 +27,116 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.13" />
 
+    <!-- Título da tela -->
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dailytek"
+        android:textSize="14sp"
+        android:fontFamily="@font/bold_inter"
+        app:layout_constraintStart_toStartOf="@id/guideline19"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline20" />
+
+    <!-- Pergunta -->
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/bold_inter"
+        android:text="Você trabalha além do seu horário regular?"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline20"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline19"
+        app:layout_constraintTop_toBottomOf="@id/textView11" />
+
+    <!-- Grupo de opções -->
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="326dp"
-        android:layout_height="342dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline20"
-        app:layout_constraintStart_toStartOf="@+id/guideline19"
-        app:layout_constraintTop_toBottomOf="@+id/textView12">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/textView12"
+        app:layout_constraintStart_toStartOf="@id/guideline19"
+        app:layout_constraintEnd_toStartOf="@id/guideline20">
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
             android:text="Não"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="16dp"
             android:text="Raramente"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:textAlignment="viewStart"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="16dp"
             android:text="Às vezes"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:textAlignment="viewStart"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter"
             android:text="Frequentemente"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:buttonTint="@color/radio_checked_color" />
 
         <RadioButton
             android:id="@+id/radioButton10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="16dp"
             android:text="Sempre"
-            android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:fontFamily="@font/inter"
+            android:textAlignment="viewStart"
+            app:buttonTint="@color/radio_checked_color" />
     </RadioGroup>
+
+    <!-- Botão Enviar -->
+    <Button
+        android:id="@+id/btnNext3"
+        android:layout_width="244dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#007AFF"
+        android:fontFamily="@font/bold_inter"
+        android:text="Enviar"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline20"
+        app:layout_constraintStart_toStartOf="@id/guideline19"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

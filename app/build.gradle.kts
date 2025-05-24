@@ -7,6 +7,9 @@ plugins {
 android {
     namespace = "br.dev.henry.dailytek"
     compileSdk = 35
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "br.dev.henry.dailytek"

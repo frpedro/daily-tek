@@ -1,10 +1,15 @@
 package br.dev.henry.dailytek
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import br.dev.henry.dailytek.data.database.entity.RespostaEntity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import br.dev.henry.dailytek.databinding.ActivityMainBinding
 
@@ -31,5 +36,6 @@ class MainActivity : AppCompatActivity() {
             )
         )
         navView.setupWithNavController(navController)
+
     }
 }
