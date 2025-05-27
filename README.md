@@ -13,14 +13,14 @@
 
 - Integração com API REST para sincronização de dados (offline-online)
 
-## 🛠️ Tecnologias
+## Tecnologias
 - Kotlin – Linguagem principal do app
 
 - SQLite – Banco de dados local para persistência dos dados
 
 - MPAndroidChart – Para geração de gráficos dinâmicos, e visuais
 
-## 📦 Instalação e Execução
+## Instalação e Execução
 ### Pré-requisitos:
 - Android Studio (versão recomendada Flamingo ou superior)
 
@@ -36,8 +36,8 @@ git clone https://github.com/frpedro/daily-tek.git
 
 - Rode o app via Android Studio (Run > Run 'app')
   
-## 📱 Screenshots do App
-![Descrição](https://imgur.com/a/dailytek-OopqzuH)
+## Screenshots do App
+![Minha imagem](app/src/main/res/assets/screenshot.png)
 
 ---
 **Projeto acadêmico desenvolvido na FIAP**
