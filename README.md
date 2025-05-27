@@ -1,15 +1,11 @@
 # 🧠 DailyTek – App de Saúde Mental e Bem-Estar Corporativo
 
-## **Projeto acadêmico desenvolvido na FIAP**
-
 ### Aplicativo voltado ao cuidado psicossocial de colaboradores, com recursos para avaliação de riscos, acompanhamento emocional e sugestões personalizadas de bem-estar. 
 
 ## Funcionalidades:
 - Avaliação de riscos psicossociais por meio de questionários
 
 - Registro e acompanhamento emocional diário
-
-- Sugestões personalizadas para melhoria do bem-estar
 
 - Histórico pessoal para monitoramento contínuo
 
@@ -20,34 +16,31 @@
 ## 🛠️ Tecnologias
 - Kotlin – Linguagem principal do app
 
-Jetpack Components – ViewModel, LiveData, Room, Navigation
+- SQLite – Banco de dados local para persistência dos dados
 
-SQLite – Banco de dados local para persistência dos dados
+- MPAndroidChart – Para geração de gráficos dinâmicos, e visuais
 
-Retrofit – Comunicação com API REST
+## 📦 Instalação e Execução
+### Pré-requisitos:
+- Android Studio (versão recomendada Flamingo ou superior)
 
-Material Design 3 – Interface moderna e responsiva
+- SDK Android 33 ou superior
 
-WorkManager – Gerenciamento de tarefas em background
+### Passos
+````bash
+git clone https://github.com/frpedro/daily-tek.git
+````
+- Abra o projeto no Android Studio
 
-📦 Instalação e Execução
-Pré-requisitos
-Android Studio (versão recomendada Flamingo ou superior)
+- Conecte um dispositivo ou emulador Android (**Pixel 4a**) 
 
-SDK Android 33 ou superior
+- Rode o app via Android Studio (Run > Run 'app')
+  
+## 📱 Screenshots do App
+![Descrição](https://imgur.com/a/dailytek-OopqzuH)
 
-Configuração das chaves de API no arquivo .env ou local.properties
-
-Passos
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/dailytek.git
-Abra o projeto no Android Studio
-
-Configure as variáveis de ambiente necessárias
-
-Conecte um dispositivo ou emulador Android
-
-Rode o app via Android Studio (Run > Run 'app')
-
+---
+**Projeto acadêmico desenvolvido na FIAP**
+- @frpedro
+- @realsethy
+- @jpmanoel
